@@ -1,8 +1,5 @@
-# deployment: 
-#   replicas: 3
-#   imageVersion: latest
-# Service:
-#   #if u want to give any thing in the service you can refer here
 deployment:
   replicas: 3
-  imageVersion: "latest"
+  imageVersion: stable-bookworm-perl
+service:
+  nodePort: 30007
