@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx
+  labels: 
+    app: srikanth
+    tier: net
+    purpose: Deployment
+spec:
+  replicas: {{ .Values.deployment.replicas}}
+  selector: 
+    matchLabels:
+      app: srikanth
+      tier: net
+      purpose: Deployment
+template:
+  metadata:
+    labels:
+      app: srikanth
+      tier: net
+      purpose: Deployment
+  spec:
+    containers:
+    - name: nginx
+      image: nginx:{{ .Values.deployment.imageVersion}}  ### srikanth9959/deployment:1.0.0
+      ports: 
+      - containerPort: 80

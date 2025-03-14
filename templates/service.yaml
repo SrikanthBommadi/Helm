@@ -1,0 +1,15 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: nginx
+spec:
+  type: LoadBalancer
+  selector: # labels will used here for selecting the pod
+    app: srikanth
+    tier: net
+    purpose: Deployment
+  ports:
+  - protocol: TCP
+    port: 80
+    targetPort: 80
+    nodeport: 30007
