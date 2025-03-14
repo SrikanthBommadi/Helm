@@ -2,27 +2,26 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: nginx
-  # labels of deployment resource
-  labels:
-    app: nginx
-    tier: frontend
-    purpose: deployment
+  labels: 
+    app: srikanth
+    tier: net
+    purpose: Deployment
 spec:
-  replicas: {{ .Values.deployment.replicas }} #assume this will change
-  selector:
+  replicas: {{ .Values.deployment.replicas }}
+  selector: 
     matchLabels:
-      app: nginx
-      tier: frontend
-      purpose: deployment
-  template:
-    metadata:
-      labels:
-        app: nginx
-        tier: frontend
-        purpose: deployment
-    spec:
-      containers:
-      - name: nginx
-        image: "nginx:{{ .Values.deployment.imageVersion }}"
-        ports:
-        - containerPort: 80
+      app: srikanth
+      tier: net
+      purpose: Deployment
+template:
+  metadata:
+    labels:
+      app: srikanth
+      tier: net
+      purpose: Deployment
+  spec:
+    containers:
+    - name: nginx
+      image: nginx:{{ .Values.deployment.imageVersion }}  ### srikanth9959/deployment:1.0.0
+      ports: 
+      - containerPort: 80

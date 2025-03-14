@@ -3,13 +3,13 @@ apiVersion: v1
 metadata:
   name: nginx
 spec:
-  type: NodePort
-  selector: # labels are used as selectors
-    app: nginx
-    tier: frontend
-    purpose: deployment
+  type: LoadBalancer
+  selector: # labels will used here for selecting the pod
+    app: srikanth
+    tier: net
+    purpose: Deployment
   ports:
   - protocol: TCP
-    port: 80 # service port
+    port: 80
     targetPort: 80
-    nodePort: 30007 
+    nodeport: {{ .Values.deployment.nodePort}}
