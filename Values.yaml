@@ -2,4 +2,5 @@ deployment:
   replicas: 3
   imageVersion: latest
 service:
-  nodePort: 30007
+  type: NodePort
+  nodePort: 30080  # Define the NodePort value
