@@ -3,20 +3,20 @@ kind: Deployment
 metadata:
   name: nginx
   labels: 
-    app: srikanth
+    app: nginx
     tier: net
     purpose: Deployment
 spec:
   replicas: {{ .Values.deployment.replicas }}
   selector: 
     matchLabels:
-      app: srikanth
+      app: nginx
       tier: net
       purpose: Deployment
 template:
   metadata:
     labels:
-      app: srikanth
+      app: nginx
       tier: net
       purpose: Deployment
   spec:
