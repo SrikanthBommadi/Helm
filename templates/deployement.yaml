@@ -7,7 +7,7 @@ metadata:
     tier: net
     purpose: Deployment
 spec:
-  replicas: {{ .Values.deployment.replicas}}
+  replicas: {{ .values.deployment.replicas}}
   selector: 
     matchLabels:
       app: srikanth
