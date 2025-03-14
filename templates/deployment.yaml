@@ -8,7 +8,7 @@ metadata:
     tier: frontend
     purpose: deployment
 spec:
-  replicas: {{ .Values.deployment.replicas }} #assume this will change
+  replicas: 3 #{{ .Values.deployment.replicas }} #assume this will change
   selector:
     matchLabels:
       app: nginx
